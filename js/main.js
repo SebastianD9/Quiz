@@ -29,7 +29,9 @@ const createStars = () => {
   const endtext = document.querySelector('.endtext');
   const answer = document.querySelector('.answer');
   let score = 0;
+  let runda = 1;
   let per='';
+  let check = false;
   let randomIndex = Math.floor(Math.random() * myQuestions.length);
   const lenght = [];
 
@@ -62,26 +64,23 @@ const createStars = () => {
 
 }
 
-function sleep(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
-}
-
-async function run(e) {
-  checkAnswer(e);
-  await sleep(1000); // czekaj 2 sekundy
-}
-
 const checkAnswer = e => {
+  if (check==false){
+  const a = (lenght.length);
+  b = (runda);
+  console.log(runda);
   OK = e.target.closest("p").textContent;
   console.log(OK);
   console.log(per);
-  if (per == OK[0]){
-    score+=1;
+    if (per == OK[0] && a==b){
+      score+=1;
+    }
   }
 }
-
 const nextquest =(e) =>{
-  run(e);
+  checkAnswer(e);
+  if (check==false){
+  check=true;
   text.style.animation = "opacityon 1s forwards";
   if(myQuestions.length==0){
     console.log(score);
@@ -93,9 +92,14 @@ const nextquest =(e) =>{
   randomIndex=b;
   showAnswers();
   showQuestions();
+  runda+=1;
   myQuestions.splice(randomIndex, 1);
   lenght.push(randomIndex);
+  check=false;
+
   text.style.animation = "opacityoff 1s forwards";}, 1000);}
+  }
+  else {console.log('chwila!');}
   }
 const TheEnd = ()=> {
   last.style.display="flex";
