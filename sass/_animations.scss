@@ -1,0 +1,44 @@
+@keyframes aurora-animation {
+    0% {
+      transform: translate(0%, 0%) rotate(0deg);
+    }
+    100% {
+      transform: translate(100%, 100%) rotate(0deg);
+    }
+  }
+
+  @keyframes FirstQuestion {
+    from {
+        height: 20em;
+    }
+    to {
+        height: 40em;
+    }
+  }
+
+  @keyframes opacityon {
+    0%{
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+  }
+
+  @keyframes opacityoff{
+    from{
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+  }
+
+  @keyframes LastQuestion {
+    from {
+        height: 40em;
+    }
+    to {
+        height: 20em;
+    }
+  }

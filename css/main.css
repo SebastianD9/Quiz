@@ -1,0 +1,220 @@
+@keyframes aurora-animation {
+  0% {
+    transform: translate(0%, 0%) rotate(0deg);
+  }
+  100% {
+    transform: translate(100%, 100%) rotate(0deg);
+  }
+}
+@keyframes FirstQuestion {
+  from {
+    height: 20em;
+  }
+  to {
+    height: 40em;
+  }
+}
+@keyframes opacityon {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes opacityoff {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes LastQuestion {
+  from {
+    height: 40em;
+  }
+  to {
+    height: 20em;
+  }
+}
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+html {
+  font-size: 62.5%;
+  overflow: hidden !important;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000000;
+  font-family: "Space Mono", monospace;
+  font-size: 1.6rem;
+  height: 100vh;
+  overflow: hidden !important;
+}
+
+body.animating {
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+  width: 20em;
+  height: 20em;
+  border: 1px solid #F7F7F7;
+  border-radius: 1px;
+  z-index: 1;
+  animation: none;
+}
+.container-Firstquestion {
+  overflow: hidden !important;
+  display: none;
+  position: absolute;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  width: 20em;
+  height: 40em;
+  color: #F7F7F7;
+  border: 1px solid #F7F7F7;
+  border-radius: 1px;
+  animation: FirstQuestion 2s ease-in-out;
+  background: transparent;
+  z-index: 10;
+}
+.container-End {
+  overflow: hidden !important;
+  display: none;
+  position: absolute;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  width: 20em;
+  height: 40em;
+  color: #F7F7F7;
+  border: 1px solid #F7F7F7;
+  border-radius: 1px;
+  animation: LastQuestion 2s ease-in-out forwards;
+  background: transparent;
+  z-index: 200;
+}
+
+h1 {
+  color: #F7F7F7;
+  font-size: 2.7em;
+}
+
+.start button {
+  font-family: "Space Mono", monospace;
+  font-weight: 800;
+  background-color: #F7F7F7;
+  color: #000000;
+  font-size: 2em;
+  padding: 0.1em 0.5em 0.1em 0.5em;
+  cursor: pointer;
+  border: 1px solid #F7F7F7;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+}
+.start button i {
+  padding-left: 0.1em;
+}
+
+.Firstquestion {
+  overflow: hidden !important;
+  max-width: 40em;
+  max-height: 40em;
+}
+.Firstquestion .text {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+  opacity: 0;
+  animation: opacityoff 2s forwards;
+  animation-delay: 2s;
+  justify-content: space-around;
+  padding: 0.5em;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+.Firstquestion p {
+  font-size: 1.2em;
+  padding: 0.4em;
+  margin: 0.8em;
+  animation-delay: 2.5s;
+  cursor: pointer;
+}
+.Firstquestion .quest {
+  font-size: 1.5em;
+}
+
+.endtext {
+  font-size: 2em;
+  display: flex;
+  height: 100%;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+  animation: opacityoff 2s forwards;
+  animation-delay: 2s;
+  opacity: 0;
+  justify-content: space-around;
+  padding: 0.5em;
+}
+
+.aurora {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: -50%;
+  left: -50%;
+  background: radial-gradient(circle, rgba(112, 183, 120, 0.2) 0%, rgba(41, 74, 50, 0.02) 85%);
+  animation: aurora-animation 10s ease-in-out infinite alternate;
+  filter: blur(100px);
+  opacity: 1;
+}
+
+.aurora:nth-child(2) {
+  animation-duration: 12s;
+  animation-delay: -3s;
+}
+
+.aurora:nth-child(3) {
+  animation-duration: 11s;
+  animation-delay: -5s;
+}
+
+.stars {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background: transparent;
+}
+
+.star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+}/*# sourceMappingURL=main.css.map */
